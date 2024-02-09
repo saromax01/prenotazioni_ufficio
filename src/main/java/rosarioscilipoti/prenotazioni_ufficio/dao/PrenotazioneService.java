@@ -21,5 +21,8 @@ public class PrenotazioneService {
        // Utilizza il repository delle prenotazioni per recuperare i dati dal database.
        // Restituisce una lista di prenotazioni che sono fatte dall'utente specificato nella data di prenotazione specificata.
     }
+    public boolean isUtenteHaPrenotazionePerData(Utente utente, LocalDate data) {
+        return daoPrenotazione.existsByUtenteAndDataPrenotazione(utente, data);
+    }
 
 }

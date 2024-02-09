@@ -12,5 +12,7 @@ public interface DaoPrenotazione extends JpaRepository<Prenotazione, Long> {
     // Questo metodo cerca le prenotazioni in base all'utente e alla data di prenotazione.
 // Prende in input un oggetto Utente e una data di prenotazione.
 // Restituisce una lista di prenotazioni che sono fatte dall'utente specificato nella data di prenotazione specificata.
-    List<Prenotazione> findByUtenteAndDataPrenotazione(Utente utente, LocalDate dataPrenotazione);
+    List<Prenotazione> findByUtenteAndDataPrenotazione(Utente utente, LocalDate data);
+    boolean existsByUtenteAndDataPrenotazione(Utente utente, LocalDate data);
 }
+
