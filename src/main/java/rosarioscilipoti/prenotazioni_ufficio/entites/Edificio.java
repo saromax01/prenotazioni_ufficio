@@ -4,10 +4,13 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.Data;
+import lombok.*;
 
 @Entity
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@ToString
 public class Edificio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,4 +19,9 @@ public class Edificio {
     private String indirizzo;
     private String citta;
 
+    public Edificio(String nome, String indirizzo, String citta) {
+        this.nome = nome;
+        this.indirizzo = indirizzo;
+        this.citta = citta;
+    }
 }
